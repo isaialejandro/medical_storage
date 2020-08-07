@@ -1,28 +1,37 @@
 from django.contrib import admin
+"""
+from medical_storage.apps.medicine.models import MedCode, Lot, Laboratory, Active, Article, MedType
 
-from medical_storage.apps.medicine.models import Name, Active, Medicine
-
-
+admin.site.register(MedCode)
+admin.site.register(Lot)
+admin.site.register(Laboratory)
 admin.site.register(Active)
-admin.site.register(Name)
+admin.site.register(MedType)
+
 
 @admin.register(Medicine)
 class MedicineAdmin(admin.ModelAdmin):
-
+    
     list_display = (
         'name',
         'laboratory',
-        #'active',
         'med_type',
-        'total_qty',
-        'disp_qty',
-        'function',
+        'med_function',
         'indications',
         'contraindications',
-        'cad'
+        'cad',
+        'reg_date'
     )
 
-    exclude = (
-        'reg_date',
-        #'user'
+    #exclude = ['user']
+
+
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'name',
+        'description',
+        'qty'
     )
+"""
