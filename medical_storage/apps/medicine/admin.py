@@ -1,6 +1,6 @@
 from django.contrib import admin
-"""
-from medical_storage.apps.medicine.models import MedCode, Lot, Laboratory, Active, Article, MedType
+
+from medical_storage.apps.medicine.models import MedCode, Lot, Laboratory, Active, Medicine, Article, MedType
 
 admin.site.register(MedCode)
 admin.site.register(Lot)
@@ -12,7 +12,7 @@ admin.site.register(MedType)
 @admin.register(Medicine)
 class MedicineAdmin(admin.ModelAdmin):
     
-    list_display = (
+    list_display = [
         'name',
         'laboratory',
         'med_type',
@@ -21,8 +21,27 @@ class MedicineAdmin(admin.ModelAdmin):
         'contraindications',
         'cad',
         'reg_date'
-    )
+    ]
 
+    search_fields = [
+        'code',
+        'name',
+        'laboratory',
+        'lot',
+        'med_type',
+        'cad',
+    ]
+
+    list_filter = [
+        'code',
+        'name',
+        'laboratory',
+        'lot',
+        'med_type',
+        'cad',
+    ]
+
+    empty_value_display = '-N/A-'
     #exclude = ['user']
 
 
@@ -34,4 +53,5 @@ class ArticleAdmin(admin.ModelAdmin):
         'description',
         'qty'
     )
-"""
+
+    empty_value_display = '-N/A-'
