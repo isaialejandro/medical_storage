@@ -80,7 +80,9 @@ class MedType(models.Model):
 class Medicine(models.Model):
 
     class Meta:
+
         verbose_name = 'Medicamento'
+        ordering = ['name', 'cad']
 
     code = models.ForeignKey(MedCode, verbose_name='Codigo único', on_delete=models.DO_NOTHING)
     name = models.CharField('Nombre', max_length=100, null=True, blank=True)
