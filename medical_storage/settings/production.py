@@ -22,6 +22,5 @@ DATABASES = {
     }
 }
 
-
-#STATIC_URL = '/static/'
 STATIC_ROOT = '/opt/django-on-docker/medicalStorage/medical_storage/medical_storage/staticfiles/'
+#MEDIA_ROOT =
