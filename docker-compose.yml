@@ -1,13 +1,15 @@
 version: '3.7'
 
 services:
-    web:
-        build: ./medical_storage
-        command: python3 manage.py runserver 0.0.0.0:80
+    app:
+        build:
+            context: .
+        ports:
+            - '80:80'
         volumes:
-            - ./medical_storage: /opt/django-on-docker/medicalStorage/medical_storage
-        ports: 
-            - 80:80
+            - ./app:/app
+        command: sh -c 'python3 manage.py runserver 0.0.0.0:80'
+        #environment:
         env_file:
-            #- /opt/django-on-docker/medicalStorage/.env
-            .env.prod
+            #- DEBUG=1
+            - ./.env.prod
