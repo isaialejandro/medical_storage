@@ -17,7 +17,7 @@ class MedCode(models.Model):
     user = models.ForeignKey(User, default='', on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return self.code + ' - ' + '{}'.format(self.user.username.capitalize())
+        return self.code
 
 
 class Lot(models.Model):
