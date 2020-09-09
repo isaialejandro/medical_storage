@@ -7,7 +7,9 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']   #LocalNetwork
+SECRET_KEY = 'l!5g7y24t8_iw9m9sppciq%)9mtoo5)=s+m_!wp*b-c7nw-@)3'
+
+ALLOWED_HOSTS = []   #LocalNetwork
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
