@@ -4,30 +4,15 @@ import os
 from .base import *
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']   #LocalNetwork
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-
-#RPI-DB
+#HomeServer Prod DB
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': '10.102.2.10',
+        'HOST': '10.102.2.23',
         'NAME': 'medical_db',
         'PORT': 5432,
-        'USER': 'medical_storage_admin',
-        'PASSWORD': 'xD6itiei_99@!'
+        'USER': 'medical_admin',
+        'PASSWORD': 'f%_QgEoap!0'
     }
 }
 
