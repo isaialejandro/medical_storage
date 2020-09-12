@@ -15,7 +15,7 @@ ENV DEBIAN_FRONTENT=noninteractive
 
 #Set project environment variables
 #Grab from Python´s os.environ
-ENV PORT=8888
+ENV PORT=8080
 
 #Install System dependencies
 RUN apt-get update && apt-get upgrade && apt-get install -y --no-install-recommends\
@@ -39,7 +39,7 @@ RUN pipenv install --skip-lock --system --dev
 #Run collectstatic for load staticfiles project
 RUN python3 manage.py collecstatic --noinput
 
-EXPOSE 8888
+EXPOSE 8080
 
 #CMD python -c "print('CMD from DockerFile!')"
 CMD gunicorn djangoOnDocker.wsgi:application --bind 0.0.0.0:$PORT
