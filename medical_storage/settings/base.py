@@ -19,11 +19,10 @@ load_dotenv()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-DEBUG = int(os.environ.get('DEBUG', default=1))
 
 SECRET_KEY = os.getenv("MEDICAL_APP_SECRET_KEY")
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS')
+ALLOWED_HOSTS = [os.getenv('DJANGO_ALLOWED_HOSTS')]
 
 # Application definition
 BASE_APPS = [
@@ -60,7 +59,7 @@ ROOT_URLCONF = 'medical_storage.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
