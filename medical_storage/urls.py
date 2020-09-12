@@ -22,6 +22,9 @@ from django.shortcuts import render
 from django.views.generic.edit import View
 
 
+"""
+Add your third party apps here with this structure:
+"""
 #index = apps.get_app_config('index').verbose_name
 
 
