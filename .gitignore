@@ -125,3 +125,6 @@ dmypy.json
 
 #DataBase info:
 .DS_Store
+
+#.env secret excluding
+.env
