@@ -30,7 +30,7 @@ ENV PORT=8080
 #    rm -rf /var/lib/apt/lists/*
 
 #For Centos8:
-RUN dnf update && dnf upgrade && dnf install -y --no-install-recommends\
+RUN yum update && yum upgrade && dnf install \
     python-setuptools \
     python-pip \
     python-wheel\
