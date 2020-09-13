@@ -18,11 +18,12 @@ ENV DEBIAN_FRONTENT=noninteractive
 ENV PORT=8080
 
 #Install System dependencies
-RUN apt-get update && apt-get upgrade && apt-get install -y --no-install-recommends\
-    python3-setuptools \
-    python3-pip \
-    python3-dev \
-    python3-venv \
+RUN dnf update && dnf upgrade && dnf install -y --no-install-recommends\
+    python-setuptools \
+    python-pip \
+    python-wheel\
+    python-dev \
+    python-venv \
     git \
     && \
     #apt-get clean && \
