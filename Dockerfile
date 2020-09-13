@@ -25,7 +25,7 @@ RUN apt-get update && apt-get upgrade && apt-get install -y --no-install-recomme
     python3-venv \
     git \
     && \
-    apt-get clean && \
+    #apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 #Install environment dependencies
