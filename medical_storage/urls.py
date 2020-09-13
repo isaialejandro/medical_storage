@@ -13,9 +13,28 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+from django.shortcuts import render
+
+from django.views.generic.edit import View
+
+
+"""
+Add your third party apps here with this structure:
+"""
+#index = apps.get_app_config('index').verbose_name
+
+
+class Index(View):
+
+    def get(self, request):
+        return render(request, 'index.html')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', Index.as_view(), name='index'),
 ]
