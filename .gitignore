@@ -128,3 +128,6 @@ dmypy.json
 
 #.env secret excluding
 .env
+
+#for Different dockerfile versions in whole project:
+.Dockerfile
