@@ -34,12 +34,12 @@ RUN pip install pipenv
 RUN pip install --no-cache-dir -r requirements.txt
 
 #Install project dependencies
-RUN pipenv install --skip-lock --system --dev
+#RUN pipenv install --skip-lock --system --dev
 
 #Run collectstatic for load staticfiles project
-RUN python3 manage.py collecstatic --noinput
+RUN python3 manage.py collectstatic --noinput
 
 EXPOSE 8080
 
 #CMD python -c "print('CMD from DockerFile!')"
-CMD gunicorn djangoOnDocker.wsgi:application --bind 0.0.0.0:$PORT
+CMD gunicorn medical_storage.wsgi:application --bind 0.0.0.0:$PORT
