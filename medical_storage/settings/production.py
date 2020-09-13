@@ -4,27 +4,16 @@ from .base import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': '10.64.2.23',
-        'NAME': 'medical_db',
-        'PORT': 5432,
-        'USER': 'medical_admin',
-        'PASSWORD': 'f%kdfkj_0092!'
+        'HOST': os.getenv('DB_HOST'),
+        'NAME': os.getenv('DB_NAME'),
+        'PORT': os.getenv('DB_PORT'),
+        'USER': os.getenv('DB_USR'),
+        'PASSWORD': os.getenv('DB_PWD')
     }
 }
 
-"""
-#RPI-DB FOR TEST
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': '10.102.2.10',
-        'NAME': 'medical_db',
-        'PORT': 5432,
-        'USER': 'medical_storage_admin',
-        'PASSWORD': 'xD6itiei_99@!'
-    }
-}
-"""
+STATIC_URL = '/static/'
+#STATIC_ROOT = '/opt/django-on-docker/medicalStorage/medical_storage/medical_storage/staticfiles/'
+STATIC_ROOT = '/medical_storage/staticfiles'
 
-STATIC_ROOT = '/opt/django-on-docker/medicalStorage/medical_storage/medical_storage/staticfiles/'
 #MEDIA_ROOT =
